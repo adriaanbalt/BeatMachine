@@ -1,0 +1,135 @@
+#credits {
+
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	width: 100%;
+
+	.credits {
+		position: absolute;
+		@include opacity(0);
+		z-index:0;
+		width: 100%;
+		text-align: center;
+		margin-top:3em;
+
+		p.preso-sm {
+			font-size: 1.1em;
+			margin-bottom: 1em;
+		}
+
+		p.preso-lg {;
+			letter-spacing: .25em;
+			font-family: "Futura W01 Heavy";
+			font-size: 1.8em;
+			line-height: 1em;
+			margin-bottom: 2em;
+		}
+	}
+	
+	.valign {
+		width: 100%;
+	}
+
+	#end-screen-controls {
+		position: absolute;
+		width: 100%;
+		z-index:1;
+		bottom: -10em;
+		padding: 2em 0;
+		margin-bottom: 1.5em;
+		@include opacity(0);
+		text-align: center;
+		a {
+			display: inline-block;  
+			margin-right: 5%;
+			width: 90px;
+			height: 90px;
+			padding-top: 100px;
+			background-size: 100%;
+		}
+		a:last-child {
+			margin-top: 0;
+			margin-right: 0;
+		}
+		#end-control-restart {
+			background-image: url(../images/icons/restart_icon.svg);
+			background-repeat:  no-repeat;
+		}
+		#end-control-create {
+			background-image: url(../images/icons/create_icon.svg);
+			background-repeat:  no-repeat;
+		}
+		#end-control-share {
+			background-image: url(../images/icons/share_icon_tabbed.svg);
+			background-repeat:  no-repeat;
+			margin-right: 0;
+		}
+		#end-control-share.selected {
+			background-image: url(../images/icons/share-send_icon.svg);
+			background-repeat:  no-repeat;
+		}
+		.social-strip {
+			a{
+				width: 60px;
+				height: 60px;
+			}
+		}
+	}
+
+	.btn-icon {
+		text-transform: uppercase;
+	}
+}
+
+@media  only screen and (max-width: 1024px){
+	#credits {
+		#end-screen-controls {
+			bottom: -19em;
+		}
+	}
+}
+
+@media  only screen and (max-width: 640px){
+	#credits {
+		#end-screen-controls {
+			a {
+				width: 60px;
+				height: 60px;
+				padding-top: 70px;
+			}
+			.social-strip {
+				a{
+					width: 45px;
+					height: 45px;
+				}
+			}
+			bottom: -23em;
+		}
+	}
+}
+
+@media only screen and (max-width: 640px) and (orientation : landscape){
+	#credits {
+		.credits {
+			margin-top: -2em;
+			p.preso-sm {
+				font-size: .5em;
+				margin-bottom: .5em;
+			}
+			p.preso-lg {
+				font-size: 1em;
+				line-height: .5em;
+				margin-bottom: 1em;
+			}
+		}
+		#end-screen-controls {
+			bottom: -19em;
+			a{
+				width: 35px;
+				height: 35px;
+				padding-top: 40px;
+			}
+		}
+	}
+}

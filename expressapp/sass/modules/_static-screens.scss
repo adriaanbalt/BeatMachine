@@ -1,0 +1,93 @@
+
+
+/*******************************
+*       iOS Warning Screen
+*******************************/
+
+#ios-warning, 
+#bandwidth {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    position: relative;
+    
+    p {
+        padding-top: 150px;
+        background: url(../images/icons/error_icon.svg) 50% 0 no-repeat;
+        margin-bottom: 55px;
+    }
+
+    a {
+        font-family:'Futura W01 Heavy';
+        font-size: 1.3em;
+    }
+}
+
+/*******************************
+*       Successfully shared
+*******************************/
+#share-success {
+    overflow: hidden;
+    background-color: #030303;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    position: relative;
+    padding-top: 18em;
+    p {
+        padding-top: 150px;
+        background: url(../images/icons/check_icon.svg) 50% 0 no-repeat;   
+        margin-bottom: 55px;
+    }
+}
+
+/*****************************************
+*        END SCREEN SHARE
+*******************************************/
+
+#endscreen-share {
+    padding: 10em 0 6.25em 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background: -webkit-gradient(linear, left top, left bottom, from(#070705), to(#4b4537));
+
+    h2 {
+        margin-bottom: 2em;
+    }
+    a.btn-clear {
+        position: absolute;
+        left: 40px;
+        top: 40px;
+    }
+
+
+    a.btn-create {
+        text-decoration: none;
+        display: block;
+        font-size: 18px;
+        color: $def-color-gold;
+        width: 122px;
+        padding-top: 140px;
+        text-align: center;
+        background: url(../images/icon-create.svg) no-repeat;
+        margin: 0 auto;
+        height: 160px;
+    }
+
+    .social-strip {
+        display: block !important;
+        @include opacity(1);
+        a {
+            width: 100px;
+            padding-top: 100px;      
+        }
+    }  
+
+
+    .link-copy, h5 {
+        margin-bottom: 2em;
+    }
+
+}

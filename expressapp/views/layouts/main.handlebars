@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Beat Machine</title>
+    <meta name="description" content="Beat Machine" />
+
+    <link rel="shortcut icon" href="images/favicon.ico" >
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />   
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    {{#if production }}
+    <link href="/css/beatmachine.min.css" rel="stylesheet" type="text/css" />
+    {{else}}
+    <link href="/css/beatmachine.css" rel="stylesheet" type="text/css" />
+    {{/if}}
+</head>
+<body>
+
+<div id="wrapper">
+    {{{body}}}
+</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-45008456-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{{#if production }}
+<script>document.write('<script src="/js/' +('__proto__' in {} ? 'zepto.min' : 'lib/jquery-1.8.3') +'.js"><\/script>');</script>
+<script type="text/javascript" src="/js/beatmachine.min.js"></script>
+{{else}}
+<script>document.write('<script src="/js/lib/' +('__proto__' in {} ? 'zepto' : 'jquery-1.8.3') +'.js"><\/script>');</script>
+<script>document.write(('__proto__' in {} ? '<script src="/js/lib/zepto_fx_methods.js"' : '')+'><\/script>');</script>
+<script type="text/javascript" src="/js/lib/requestAnimationFrame.js"></script>
+<script type="text/javascript" src="/js/lib/gl-matrix.js"></script>
+<script type="text/javascript" src="/js/lib/delaunay.js"></script>
+<script type="text/javascript" src="/createjs/utils/Proxy.js"></script>
+<script type="text/javascript" src="/createjs/utils/IndexOf.js"></script>
+<script type="text/javascript" src="/createjs/events/Event.js"></script>
+<script type="text/javascript" src="/createjs/events/EventDispatcher.js"></script>
+<script type="text/javascript" src="/soundjs/Sound.js"></script>
+<script type="text/javascript" src="/soundjs/WebAudioPlugin.js"></script>
+<script type="text/javascript" src="/soundjs/HTMLAudioPlugin.js"></script>
+<script type="text/javascript" src="/soundjs/swfobject.js"></script>
+<script type="text/javascript" src="/soundjs/FlashPlugin.js"></script>
+<script type="text/javascript" src="/js/beatmachine.js"></script>
+<script type="text/javascript" src="/js/beatmachine.audio.js"></script>
+<script type="text/javascript" src="/js/beatmachine.createCard.js"></script>
+<script type="text/javascript" src="/js/beatmachine.msgCanvas.js"></script>
+<script type="text/javascript" src="/js/beatmachine.msgView.js"></script>
+<script type="text/javascript" src="/js/beatmachine.msgCompose.js"></script>
+<script type="text/javascript" src="/js/beatmachine.send.js"></script>
+<script type="text/javascript" src="/js/beatmachine.watchCard.js"></script>
+<script type="text/javascript" src="/js/beatmachine.video.js"></script>
+{{/if}}
+</body>
+</html>

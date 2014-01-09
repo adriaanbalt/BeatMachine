@@ -1,0 +1,93 @@
+#send {
+	background-position: center bottom;
+	background-color: #010203;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	#send-back {
+		position: absolute;
+		top: 2.5em;
+		left: 2.5em;
+	}
+	h2 {
+		text-align: center;
+		margin: 6.75em 0 3em 0;
+	}
+
+	.twitter-send,
+	.facebook-send,
+	.email-send {
+		width: 100%;
+		text-align: center;
+		display: none;
+		opacity: 0;
+		height: 21em;
+		margin-bottom: 5em;
+	}
+
+	.link-copy {
+		width: 100%;
+		text-align: center;
+		padding: 2em 0 3em 0;
+		p {
+			margin-bottom: 1em;
+		}
+
+		a {
+			line-height: 20px;
+			font-size: 18px;
+			text-decoration: none;
+		}
+	}
+
+	input {
+		font-size: 2em;
+		background-color: #000;    
+		width: 14.5em;
+		height: 2.5em;
+		padding: 0;
+		text-align: center;   
+		line-height: 2.7em;
+		border: 1px solid #2b271f;
+		margin: 0 auto .5em auto;
+		outline: none;
+		color: $def-color-gold;
+		font-family:'Futura W01 Book';
+
+	}
+
+	input:focus {
+		border: 1px solid $def-color-gold;
+	}
+
+	::-webkit-input-placeholder { 
+		color:  #433d31;
+		text-transform: uppercase;
+		font-family: 'Futura W01 Book';   
+		font-size: .6em;
+	}
+
+	a.form-button {
+		display: inline-block;
+		width: 29em;
+		height: 5em;
+		background: #2e2b22;
+		color: #5b5443;
+		text-align: center;
+		line-height: 5em;
+		padding: 0;
+		margin: 0 auto 3.75em auto;
+		text-transform: uppercase;
+	}
+
+	a.form-button.focused {
+		background: $def-color-gold;
+		color: #000;
+	}
+  
+
+
+	a.hidden-links {
+		display: none;
+	}
+}

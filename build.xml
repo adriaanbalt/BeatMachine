@@ -1,0 +1,114 @@
+<!--
+This build.xml is used for merging and compressing Javascript and CSS files used for the  beatmachine Card
+
+Dependencies: 
+	yuicompressor-2.4.2.jar
+	ant-contrib.jar
+
+Basic usage:
+	ant main - updates merged and compressed files for all Javascript and CSS
+	
+@author Brian Fegan (AKQA)
+-->
+<project name="JS and CSS compressor for beatmachine" basedir="." default="main">
+
+	<property name="verbose" value="false" />
+	
+	<property name="compressor.dir" value="${basedir}/ant/yuicompressor-2.4.7.jar"/>
+	<property name="antcontrib.dir" value="${basedir}/ant/ant-contrib.jar"/>
+	<property name="src.dir" value="${basedir}/expressapp/public/"/>
+	
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="${antcontrib.dir}"/>
+		</classpath>
+	</taskdef>
+	
+	<!-- Concatenate zepto javascript -->
+	<target name="compress-zepto">
+		<concat destfile="${src.dir}/zepto-concat.js" fixlastline="yes" append="no">
+			<filelist dir="${src.dir}/js/lib" files="
+				zepto.js
+				zepto_fx_methods.js
+			"/>
+		</concat>
+		<java jar="${compressor.dir}" fork="true">
+			<arg value="${src.dir}/zepto-concat.js"/>
+			<arg value="-o"/>
+			<arg value="${src.dir}/js/zepto.min.js"/>
+		</java>
+		<delete file="${src.dir}/zepto-concat.js" />		
+	</target>
+	
+	<!-- Concatenate canvas libs -->
+	<target name="concat-canvas">
+		<concat destfile="${src.dir}/canvas-concat.js" fixlastline="yes" append="no">
+			<filelist dir="${src.dir}/js/lib" files="
+				requestAnimationFrame.js
+				gl-matrix.js
+				delaunay.js
+			"/>
+		</concat>
+	</target>
+	
+	<!-- Concatenate soundjs libs -->
+	<target name="concat-soundjs">
+		<concat destfile="${src.dir}/sound-concat.js" fixlastline="yes" append="no">
+			<filelist dir="${src.dir}" files="
+				createjs/utils/Proxy.js
+				createjs/utils/IndexOf.js
+				createjs/events/Event.js
+				createjs/events/EventDispatcher.js
+				soundjs/Sound.js
+				soundjs/WebAudioPlugin.js
+				soundjs/HTMLAudioPlugin.js
+				soundjs/swfobject.js
+				soundjs/FlashPlugin.js
+			"/>
+		</concat>
+	</target>
+	
+	<!-- compress and merge js files -->
+	<target name="concat-beatmachinejs">
+		<concat destfile="${src.dir}/beatmachine-concat.js" fixlastline="yes" append="no">
+			<filelist dir="${src.dir}/js" files="
+				beatmachine.js
+				beatmachine.audio.js
+				"/>
+		</concat>
+	</target>
+	
+	<!-- compress and merge js files -->
+	<target name="compress-js" depends="compress-zepto, concat-canvas, concat-soundjs, concat-beatmachinejs">
+		<concat destfile="${src.dir}/all-concat.js" fixlastline="yes" append="no">
+			<filelist dir="${src.dir}/" files="
+				canvas-concat.js
+				sound-concat.js
+				beatmachine-concat.js
+				"/>
+		</concat>
+		<java jar="${compressor.dir}" fork="true">
+			<arg value="${src.dir}/all-concat.js"/>
+			<arg value="-o"/>
+			<arg value="${src.dir}/js/beatmachine.min.js"/>
+		</java>
+		<delete file="${src.dir}/canvas-concat.js" />
+		<delete file="${src.dir}/sound-concat.js" />
+		<delete file="${src.dir}/beatmachine-concat.js" />
+		<delete file="${src.dir}/all-concat.js" />
+	</target>
+	
+	<!-- compress and merge css files -->
+	<target name="compress-css">
+		<java jar="${compressor.dir}" fork="true">
+			<arg value="${src.dir}/css/beatmachine.css"/>
+			<arg value="-o"/>
+			<arg value="${src.dir}/css/beatmachine.min.css"/>
+		</java>
+	</target>
+	
+	<!-- run all tasks -->
+	<target name="main" depends="compress-js, compress-css">
+    </target>
+	
+</project>

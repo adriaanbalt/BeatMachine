@@ -1,0 +1,127 @@
+/* Futura font family defined by Type Kit's stylesheet: http://fast.fonts.net/cssapi/8df21ee7-173d-49f0-a1a9-7927c36662c7.css
+* font-family:'Futura W01 Light';
+* font-family:'Futura W01 Book';
+* font-family:'Futura W01 Heavy';
+*/
+
+body {
+	font-family: $def-font-family;
+	font-size: 100%;
+	line-height: $def-line-height; 
+	color: $def-font-color;
+	font-size: 18px;
+	-webkit-font-smoothing:antialiased;
+}
+p{
+	line-height: 1.8em;
+	font-size:18px;
+	letter-spacing: 0.2em;
+}
+a {
+	font-family: "Futura W01 Heavy", "Helvetica", "Arial";
+	color: $def-color-gold; 
+	letter-spacing: 0.18em;
+	text-decoration: none;
+	font-size: 18px;
+	text-align: center;
+	-webkit-font-smoothing:antialiased;
+}
+
+p {
+	text-transform: uppercase;
+	font-family: "Futura W01 Book", "Helvetica", "Arial";
+	color: $def-color-gold;	
+	letter-spacing: 0.2em;
+	-webkit-font-smoothing:antialiased;
+}
+
+h1 {
+	font-size: 4.5em;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-family: "Futura W01 Light", Helvetica, Arial;
+	letter-spacing: 18px;
+	line-height: 82px;
+	span {
+		font-size: .5em;
+		letter-spacing: 10px;
+	}
+}
+
+h2 {
+	font-family: "Futura W01 Light", "Helvetica", "Arial";
+	color: $def-color-gold;
+	text-transform: uppercase;
+	letter-spacing: .25em;
+	font-size: 2em;
+	color: #fff;
+	-webkit-font-smoothing:antialiased;
+}
+
+h4 {
+	font-family:'Futura W01 Book', "Helvetica", "Arial";
+	color: $def-color-gold;
+	text-transform: uppercase;
+	letter-spacing: .25em;
+	font-size: 1em;
+	-webkit-font-smoothing:antialiased;
+}
+
+h5 {
+	font-family: "Futura W01 Light", "Helvetica", "Arial";
+	text-transform: uppercase;
+	color: $def-color-gold;	
+	line-height: 1em;
+	text-decoration: none;
+	-webkit-font-smoothing:antialiased;
+}
+
+
+span {
+	font-size: 12px;
+}
+
+#trace1 {
+	color: #fff;
+	position: absolute;
+	z-index: 1000;
+}
+#trace2 {
+	color: #fff;
+	position: absolute;
+	z-index: 1000;
+	top: 20px;
+}
+#trace3 {
+	color: #fff;
+	position: absolute;
+	z-index: 1000;
+	top: 40px;
+}
+
+
+@media  only screen and (max-width: 1024px) and (orientation : landscape) {
+
+	p{
+		font-size: 14px;
+	}
+	a{
+		font-size: 14px;
+	}
+}
+
+@media  only screen and (max-width: 640px){
+	body{
+		font-size: 9px;
+	}
+	p{
+		font-size: 9px;
+	}
+	a{
+		font-size: 9px;
+	}
+	span {
+		font-size: 6px;
+	}
+}

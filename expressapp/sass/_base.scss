@@ -1,0 +1,26 @@
+html {
+	background: $def-html-background;
+}
+a {
+	color: $def-font-color;
+}
+
+.btn-icon {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);     
+}
+
+
+.hidden {
+	visibility: hidden;
+}
+
+/**clearfix fix **/
+.cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; } /* Hides from IE-mac \*/
+.clearfix { display: block; }

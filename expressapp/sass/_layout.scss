@@ -1,0 +1,60 @@
+#wrapper {
+	width: 100%;
+	margin: 0 auto;
+	background: #010203;
+	position: relative;     
+}
+
+.displayNone {
+	display: none;
+}
+
+.align {
+	vertical-align: middle;
+	display: inline-block;
+	height: 100%;
+	width: 1px;
+}
+.valign {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.offScreen {
+	position: absolute;
+	bottom: 100em;
+	right: 100em;
+}
+
+.section {
+	top: 0;
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.btn-icon {
+	text-transform: uppercase;
+}
+
+@-webkit-keyframes rotation {
+	from {-webkit-transform: rotate(0deg);}
+	to {-webkit-transform: rotate(359deg);}
+}
+
+@-moz-keyframes rotation {
+	from {-moz-transform: rotate(0deg);}
+	to {-moz-transform: rotate(359deg);}
+}
+
+@-o-keyframes rotation {
+	from {-o-transform: rotate(0deg);}
+	to {-o-transform: rotate(359deg);}
+}
+
+@keyframes rotation {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(359deg);}
+}
+
