@@ -70,11 +70,13 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 app.get('/', routes.index);
-app.get('/card/create', routes.card.createForm);
-app.get('/card/preview', routes.card.preview);
-app.post('/card/create', routes.card.create);
-app.post('/card/:code/name', routes.card.name);
-app.get('/:code', routes.card.view);
+app.get('/login', routes.login);
+app.get('/create', routes.create);
+app.get('/howto', routes.howto);
+app.get('/account', routes.account);
+// app.get('/preview', routes.preview);
+// app.post('/:code/name', routes.name);
+// app.get('/:code', routes.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

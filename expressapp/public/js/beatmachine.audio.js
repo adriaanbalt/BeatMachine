@@ -9,8 +9,8 @@ window.BEATMACHINE = window.BEATMACHINE || {};
 
 /**
  * @name BEATMACHINE.Audio
- * @namespace Manage the audio of the BEATMACHINE card.
- * @description Manage the audio of the BEATMACHINE card.
+ * @namespace Manage the audio of the BEATMACHINE.
+ * @description Manage the audio of the BEATMACHINE.
  * @requires BEATMACHINE
  */
 BEATMACHINE.Audio = (function(BEATMACHINE, window, undefined){
